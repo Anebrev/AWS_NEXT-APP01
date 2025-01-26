@@ -1,0 +1,56 @@
+version: 0.2
+
+phases: 
+  install:
+    commands:  
+#     - sudo yum update  
+      - node -v && npm -v 
+#     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.40.1/install.sh | NVM_DIR=/usr/local/nvm bash
+#     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+#     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | NVM_DIR=/usr/local/nvm bash
+#     - source ~/.nvm/nvm.sh
+#     - export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#      - nvm --version
+#     - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
+#     - source "$NVM_DIR/nvm.sh"
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#     restart terminal or export nvm:
+#      - source ~/.bashrc
+#      - source ~/.zshrc
+#      - . ~/.profile
+#     - source .bash_profile
+#      - export NVM_DIR='$HOME/.nvm'
+#      - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      - nvm -v
+  pre_build:
+    commands:
+      - node -v && npm -v 
+#     install last node version:      
+      - nvm install node
+      - node -v && npm -v 
+      - nvm use global 23
+#     - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
+#     - sudo yum install -y nodejs
+      - node -v && npm -v
+#      
+#     - echo Installing source NPM dependencies...
+#     - npm install 
+#     - npm i next@latest     
+  build:
+    commands:
+      - echo Build started on `date`
+#      - echo Compiling the Node.js code
+#      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+# Include only the files required for your application to run.
+# Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages 
+# used only for building and testing.
+# ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
+#artifacts:
+#  files:
+#    - build/**/*
+#    - Scripts/**/*
+#    - appspec.yml    

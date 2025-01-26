@@ -4,7 +4,13 @@ phases:
   pre_build:
     commands:
 #      - sudo yum update
-      - node -v && npm -v && nvm -v
+      - node -v && npm -v 
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+      - node -v && npm -v 
+#     install last node version:      
+      - nvm install node
+      - node -v && npm -v 
+      - nvm use global 23
 #      - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
 #      - sudo yum install -y nodejs
       - node -v && npm -v

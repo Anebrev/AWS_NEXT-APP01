@@ -5,8 +5,9 @@ phases:
     commands:  
 #     - sudo yum update
       - node -v && npm -v 
-      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.40.1/install.sh | NVM_DIR=/usr/local/nvm bash
+#      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.40.1/install.sh | NVM_DIR=/usr/local/nvm bash
 #      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | | NVM_DIR=/usr/local/nvm bash
 #     - source ~/.nvm/nvm.sh
 #      - export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

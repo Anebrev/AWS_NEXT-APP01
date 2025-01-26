@@ -4,9 +4,9 @@ phases:
   pre_build:
     commands:
 #      - sudo yum update
-      - node -v && npm -v
-      - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
-      - sudo yum install -y nodejs
+      - node -v && npm -v && nvm -v
+#      - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
+#      - sudo yum install -y nodejs
       - node -v && npm -v
 #      
 #      - echo Installing source NPM dependencies...

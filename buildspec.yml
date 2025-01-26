@@ -7,19 +7,23 @@ phases:
       - node -v && npm -v 
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
       - node -v && npm -v 
+#     restart terminal:
+      - source ~/.bashrc
+      - nvm -v
   pre_build:
     commands:
+      - node -v && npm -v 
 #     install last node version:      
       - nvm install node
       - node -v && npm -v 
       - nvm use global 23
-#      - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
-#      - sudo yum install -y nodejs
+#     - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
+#     - sudo yum install -y nodejs
       - node -v && npm -v
 #      
-#      - echo Installing source NPM dependencies...
-#      - npm install 
-#      - npm i next@latest     
+#     - echo Installing source NPM dependencies...
+#     - npm install 
+#     - npm i next@latest     
   build:
     commands:
       - echo Build started on `date`

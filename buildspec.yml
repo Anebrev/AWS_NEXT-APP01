@@ -2,14 +2,13 @@ version: 0.2
 
 phases: 
   install:
-    commands:  
-      - node -v && npm -v 
+    commands:        
       - sudo yum groupinstall 'Development Tools' -y      
       - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y
       - echo >> /root/.bashrc
       - echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.bashrc
       - eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"      
-      - brew doctor
+      #- brew doctor
   pre_build:
     commands:
       - node -v && npm -v 

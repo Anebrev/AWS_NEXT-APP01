@@ -1,12 +1,14 @@
 version: 0.2
 
-phases:  
-  pre_build:
-    commands:
-#      - sudo yum update
+phases: 
+  install:
+    commands:  
+#     - sudo yum update
       - node -v && npm -v 
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
       - node -v && npm -v 
+  pre_build:
+    commands:
 #     install last node version:      
       - nvm install node
       - node -v && npm -v 

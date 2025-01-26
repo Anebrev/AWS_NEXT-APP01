@@ -3,14 +3,16 @@ version: 0.2
 phases:  
   pre_build:
     commands:
-      - echo Installing source NPM dependencies...
-      - npm install 
-      - npm i next@latest     
+      - sudo yum update
+      - node -v && npm -v
+#      - echo Installing source NPM dependencies...
+#      - npm install 
+#      - npm i next@latest     
   build:
     commands:
       - echo Build started on `date`
-      - echo Compiling the Node.js code
-      - npm run build
+#      - echo Compiling the Node.js code
+#      - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
@@ -18,8 +20,8 @@ phases:
 # Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages 
 # used only for building and testing.
 # ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
-artifacts:
-  files:
-    - build/**/*
+#artifacts:
+#  files:
+#    - build/**/*
 #    - Scripts/**/*
 #    - appspec.yml    

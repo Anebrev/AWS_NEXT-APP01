@@ -3,11 +3,10 @@ version: 0.2
 phases:  
   pre_build:
     commands:
-#     - sudo yum update
+#      - sudo yum update
       - node -v && npm -v
-      - curl -sL https://rpm.nodesource.com/setup_22.0 | sudo -E bash -
-#     - sudo yum install -y nodejs
-      - sudo yum install nodejs -y
+      - curl -sL https://rpm.nodesource.com/setup_23.x | sudo -E bash -
+      - sudo yum install -y nodejs
       - node -v && npm -v
 #      
 #      - echo Installing source NPM dependencies...
@@ -29,4 +28,4 @@ phases:
 #  files:
 #    - build/**/*
 #    - Scripts/**/*
-#    - appspec.yml 
+#    - appspec.yml    

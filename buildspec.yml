@@ -21,7 +21,7 @@ phases:
       #- sudo yum install -y nodejs
       # 1.2. Downgrade node - if necessary: 
       #- brew unlink node && brew link node@19 #sample
-      - node -v && npm -v      
+      #- node -v && npm -v      
   build:
     commands:
       - echo Build started on `date`
